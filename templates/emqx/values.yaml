@@ -134,7 +134,7 @@ emqxConfig:
 ##   kubectl create secret generic emqx-license-secret-name --from-file=/path/to/emqx.lic
 emqxLicenseSecretName:
 
-dashboard-service:
+dashboardService:
   ## Service type
   ##
   type: ClusterIP
@@ -182,7 +182,7 @@ dashboard-service:
   annotations: {}
   labels: {}
 
-mqtt-services:
+mqttServices:
   ## Service type
   ##
   type: ClusterIP
