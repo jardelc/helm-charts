@@ -182,7 +182,7 @@ dashboardService:
   annotations: {}
   labels: {}
 
-mqttServices:
+service:
   ## Service type
   ##
   type: ClusterIP
