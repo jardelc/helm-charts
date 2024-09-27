@@ -71,7 +71,6 @@ spec:
     {{- else if eq .Values.mqttServices.type "ClusterIP" }}
     nodePort: null
     {{- end }}
-  {{- end }}
   selector:
     app.kubernetes.io/name: {{ include "emqx.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
