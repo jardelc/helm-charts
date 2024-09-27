@@ -2,4 +2,4 @@
 My helm charts
 
 
-helm repo index charts --url https://jardeelc.github.io/helm-charts/charts
+helm repo index . --url https://jardelc.github.io/helm-charts

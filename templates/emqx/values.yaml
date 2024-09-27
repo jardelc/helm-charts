@@ -134,25 +134,13 @@ emqxConfig:
 ##   kubectl create secret generic emqx-license-secret-name --from-file=/path/to/emqx.lic
 emqxLicenseSecretName:
 
-service:
+dashboard-service:
   ## Service type
   ##
   type: ClusterIP
   ## The cluster IP if one wants to customize it to a fixed value
   ##
   clusterIP: None
-  ## Port for MQTT
-  ##
-  mqtt: 1883
-  ## Port for MQTT(SSL)
-  ##
-  mqttssl: 8883
-  ## Port for WebSocket/HTTP
-  ##
-  ws: 8083
-  ## Port for WSS/HTTPS
-  ##
-  wss: 8084
   ## Port for dashboard and API
   ##
   dashboard: 18083
@@ -163,11 +151,6 @@ service:
   ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport
   ##
   nodePorts:
-    mqtt:
-    mqttssl:
-    mgmt:
-    ws:
-    wss:
     dashboard:
     dashboardtls:
   ## Specifies the load balancer implementation this Service belongs to.
@@ -198,6 +181,64 @@ service:
   ##
   annotations: {}
   labels: {}
+
+mqtt-services:
+  ## Service type
+  ##
+  type: ClusterIP
+  ## The cluster IP if one wants to customize it to a fixed value
+  ##
+  clusterIP: None
+  ## Port for MQTT
+  ##
+  mqtt: 1883
+  ## Port for MQTT(SSL)
+  ##
+  mqttssl: 8883
+  ## Port for WebSocket/HTTP
+  ##
+  ws: 8083
+  ## Port for WSS/HTTPS
+  ##
+  wss: 8084
+  ## Specify the nodePort(s) value for the LoadBalancer and NodePort service types.
+  ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport
+  ##
+  nodePorts:
+    mqtt:
+    mqttssl:
+    mgmt:
+    ws:
+    wss:
+  ## Specifies the load balancer implementation this Service belongs to.
+  ## Once set, it can not be changed.
+  ##
+  # loadBalancerClass:
+  ## Set the LoadBalancer service type to internal only.
+  ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#internal-load-balancer
+  ##
+  # loadBalancerIP:
+  ## Load Balancer sources
+  ## ref: https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/#restrict-access-for-loadbalancer-service
+  ## Example:
+  ## loadBalancerSourceRanges:
+  ## - 10.10.10.0/24
+  ##
+  loadBalancerSourceRanges: []
+  ## Set the ExternalIPs
+  ##
+  externalIPs: []
+  ## Denotes if this Service desires to route external traffic to node-local or cluster-wide endpoints.
+  ## There are two available options: Cluster (default) and Local.
+  ## Cluster obscures the client source IP and may cause a second hop to another node, but should have good overall load-spreading.
+  ## Local preserves the client source IP and avoids a second hop for LoadBalancer and NodePort type Services, but risks potentially imbalanced traffic spreading.
+  ##
+  externalTrafficPolicy: "Cluster"
+  ## Provide any additional annotations which may be required. Evaluated as a template
+  ##
+  annotations: {}
+  labels: {}
+
 
 nodeSelector: {}
 
