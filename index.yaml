@@ -3,13 +3,13 @@ entries:
   emqx:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-09-27T15:13:49.942056319-04:00"
+    created: "2024-09-27T15:16:37.564055536-04:00"
     description: A Helm chart for EMQX
     digest: 90f7870edea000aff8c2940560191a4a33a3122bc89dc932d7981f04eb4650d2
     icon: https://github.com/emqx.png
     name: emqx
     type: application
     urls:
-    - https://jardelc.github.io/helm-charts/charts/emqx-1.0.0.tgz
+    - https://jardelc.github.io/helm-charts/emqx-1.0.0.tgz
     version: 1.0.0
-generated: "2024-09-27T15:13:49.94067972-04:00"
+generated: "2024-09-27T15:16:37.563009041-04:00"
