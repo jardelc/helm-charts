@@ -8,67 +8,67 @@ metadata:
     helm.sh/chart: {{ include "emqx.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
-  {{- if .Values.mqtt-services.labels }}
-    {{- toYaml .Values.mqtt-services.labels | nindent 4 }}
+  {{- if .Values.mqttServices.labels }}
+    {{- toYaml .Values.mqttServices.labels | nindent 4 }}
   {{- end }}
-  {{- if .Values.mqtt-services.annotations }}
+  {{- if .Values.mqttServices.annotations }}
   annotations:
-    {{- toYaml .Values.mqtt-services.annotations | nindent 4 }}
+    {{- toYaml .Values.mqttServices.annotations | nindent 4 }}
   {{- end }}
 spec:
-  type: {{ .Values.mqtt-services.type }}
-  {{- if or (eq .Values.mqtt-services.type "LoadBalancer") (eq .Values.service.type "NodePort") }}
-  externalTrafficPolicy: {{ .Values.mqtt-services.externalTrafficPolicy | default "Cluster" }}
+  type: {{ .Values.mqttServices.type }}
+  {{- if or (eq .Values.mqttServices.type "LoadBalancer") (eq .Values.service.type "NodePort") }}
+  externalTrafficPolicy: {{ .Values.mqttServices.externalTrafficPolicy | default "Cluster" }}
   {{- end }}
-  {{- if eq .Values.mqtt-services.type "LoadBalancer" }}
-  {{- if .Values.mqtt-services.loadBalancerClass }}
-  loadBalancerClass: {{ .Values.mqtt-services.loadBalancerClass }}
+  {{- if eq .Values.mqttServices.type "LoadBalancer" }}
+  {{- if .Values.mqttServices.loadBalancerClass }}
+  loadBalancerClass: {{ .Values.mqttServices.loadBalancerClass }}
   {{- end }}
-  {{- if .Values.mqtt-services.loadBalancerIP }}
-  loadBalancerIP: {{ .Values.mqtt-services.loadBalancerIP }}
+  {{- if .Values.mqttServices.loadBalancerIP }}
+  loadBalancerIP: {{ .Values.mqttServices.loadBalancerIP }}
   {{- end }}
-  {{- if .Values.mqtt-services.loadBalancerSourceRanges }}
-  loadBalancerSourceRanges: {{- toYaml .Values.mqtt-services.loadBalancerSourceRanges | nindent 4 }}
+  {{- if .Values.mqttServices.loadBalancerSourceRanges }}
+  loadBalancerSourceRanges: {{- toYaml .Values.mqttServices.loadBalancerSourceRanges | nindent 4 }}
   {{- end }}
-  {{- if .Values.mqtt-services.externalIPs }}
-  externalIPs: {{- toYaml .Values.mqtt-services.externalIPs | nindent 4 }}
+  {{- if .Values.mqttServices.externalIPs }}
+  externalIPs: {{- toYaml .Values.mqttServices.externalIPs | nindent 4 }}
   {{- end }}
   {{- end }}
   ports:
   - name: mqtt
-    port: {{ .Values.mqtt-services.mqtt | default 1883 }}
+    port: {{ .Values.mqttServices.mqtt | default 1883 }}
     protocol: TCP
     targetPort: mqtt
-    {{- if and (or (eq .Values.mqtt-services.type "NodePort") (eq .Values.service.type "LoadBalancer")) (not (empty .Values.service.nodePorts.mqtt)) }}
-    nodePort: {{ .Values.mqtt-services.nodePorts.mqtt }}
-    {{- else if eq .Values.mqtt-services.type "ClusterIP" }}
+    {{- if and (or (eq .Values.mqttServices.type "NodePort") (eq .Values.service.type "LoadBalancer")) (not (empty .Values.service.nodePorts.mqtt)) }}
+    nodePort: {{ .Values.mqttServices.nodePorts.mqtt }}
+    {{- else if eq .Values.mqttServices.type "ClusterIP" }}
     nodePort: null
     {{- end }}
   - name: mqttssl
-    port: {{ .Values.mqtt-services.mqttssl | default 8883 }}
+    port: {{ .Values.mqttServices.mqttssl | default 8883 }}
     protocol: TCP
     targetPort: mqttssl
-    {{- if and (or (eq .Values.mqtt-services.type "NodePort") (eq .Values.service.type "LoadBalancer")) (not (empty .Values.service.nodePorts.mqttssl)) }}
-    nodePort: {{ .Values.mqtt-services.nodePorts.mqttssl }}
-    {{- else if eq .Values.mqtt-services.type "ClusterIP" }}
+    {{- if and (or (eq .Values.mqttServices.type "NodePort") (eq .Values.service.type "LoadBalancer")) (not (empty .Values.service.nodePorts.mqttssl)) }}
+    nodePort: {{ .Values.mqttServices.nodePorts.mqttssl }}
+    {{- else if eq .Values.mqttServices.type "ClusterIP" }}
     nodePort: null
     {{- end }}
   - name: ws
-    port: {{ .Values.mqtt-services.ws | default 8083 }}
+    port: {{ .Values.mqttServices.ws | default 8083 }}
     protocol: TCP
     targetPort: ws
-    {{- if and (or (eq .Values.mqtt-services.type "NodePort") (eq .Values.service.type "LoadBalancer")) (not (empty .Values.service.nodePorts.ws)) }}
-    nodePort: {{ .Values.mqtt-services.nodePorts.ws }}
-    {{- else if eq .Values.mqtt-services.type "ClusterIP" }}
+    {{- if and (or (eq .Values.mqttServices.type "NodePort") (eq .Values.service.type "LoadBalancer")) (not (empty .Values.service.nodePorts.ws)) }}
+    nodePort: {{ .Values.mqttServices.nodePorts.ws }}
+    {{- else if eq .Values.mqttServices.type "ClusterIP" }}
     nodePort: null
     {{- end }}
   - name: wss
-    port: {{ .Values.mqtt-services.wss | default 8084 }}
+    port: {{ .Values.mqttServices.wss | default 8084 }}
     protocol: TCP
     targetPort: wss
-    {{- if and (or (eq .Values.mqtt-services.type "NodePort") (eq .Values.service.type "LoadBalancer")) (not (empty .Values.service.nodePorts.wss)) }}
-    nodePort: {{ .Values.mqtt-services.nodePorts.wss }}
-    {{- else if eq .Values.mqtt-services.type "ClusterIP" }}
+    {{- if and (or (eq .Values.mqttServices.type "NodePort") (eq .Values.service.type "LoadBalancer")) (not (empty .Values.service.nodePorts.wss)) }}
+    nodePort: {{ .Values.mqttServices.nodePorts.wss }}
+    {{- else if eq .Values.mqttServices.type "ClusterIP" }}
     nodePort: null
     {{- end }}
   {{- end }}
@@ -90,23 +90,23 @@ metadata:
 spec:
   type: ClusterIP
   sessionAffinity: None
-  clusterIP: {{ .Values.mqtt-services.clusterIP | default "None" }}
+  clusterIP: {{ .Values.mqttServices.clusterIP | default "None" }}
   publishNotReadyAddresses: true
   ports:
   - name: mqtt
-    port: {{ .Values.mqtt-services.mqtt | default 1883 }}
+    port: {{ .Values.mqttServices.mqtt | default 1883 }}
     protocol: TCP
     targetPort: mqtt
   - name: mqttssl
-    port: {{ .Values.mqtt-services.mqttssl | default 8883 }}
+    port: {{ .Values.mqttServices.mqttssl | default 8883 }}
     protocol: TCP
     targetPort: mqttssl
   - name: ws
-    port: {{ .Values.mqtt-services.ws | default 8083 }}
+    port: {{ .Values.mqttServices.ws | default 8083 }}
     protocol: TCP
     targetPort: ws
   - name: wss
-    port: {{ .Values.mqtt-services.wss | default 8084 }}
+    port: {{ .Values.mqttServices.wss | default 8084 }}
     protocol: TCP
     targetPort: wss
   - name: ekka
