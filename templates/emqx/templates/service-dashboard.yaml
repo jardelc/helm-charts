@@ -17,7 +17,7 @@ metadata:
   {{- end }}
 spec:
   type: {{ .Values.dashboardService.type }}
-  {{- if or (eq .Values.dashboardService.type "LoadBalancer") (eq .Values.service.type "NodePort") }}
+  {{- if or (eq .Values.dashboardService.type "LoadBalancer") (eq .Values.dashboardService.type "NodePort") }}
   externalTrafficPolicy: {{ .Values.dashboardService.externalTrafficPolicy | default "Cluster" }}
   {{- end }}
   {{- if eq .Values.dashboardService.type "LoadBalancer" }}
@@ -39,7 +39,7 @@ spec:
     port: {{ .Values.dashboardService.dashboard | default 18083 }}
     protocol: TCP
     targetPort: dashboard
-    {{- if and (or (eq .Values.dashboardService.type "NodePort") (eq .Values.service.type "LoadBalancer")) (not (empty .Values.service.nodePorts.dashboard)) }}
+    {{- if and (or (eq .Values.dashboardService.type "NodePort") (eq .Values.dashboardService.type "LoadBalancer")) (not (empty .Values.dashboardService.nodePorts.dashboard)) }}
     nodePort: {{ .Values.dashboardService.nodePorts.dashboard }}
     {{- else if eq .Values.dashboardService.type "ClusterIP" }}
     nodePort: null
@@ -49,7 +49,7 @@ spec:
     port: {{ .Values.dashboardService.dashboardtls }}
     protocol: TCP
     targetPort: dashboardtls
-    {{- if and (or (eq .Values.dashboardService.type "NodePort") (eq .Values.service.type "LoadBalancer")) (not (empty .Values.service.nodePorts.dashboardtls)) }}
+    {{- if and (or (eq .Values.dashboardService.type "NodePort") (eq .Values.dashboardService.type "LoadBalancer")) (not (empty .Values.dashboardService.nodePorts.dashboardtls)) }}
     nodePort: {{ .Values.dashboardService.nodePorts.dashboardtls }}
     {{- else if eq .Values.dashboardService.type "ClusterIP" }}
     nodePort: null

@@ -17,7 +17,7 @@ metadata:
   {{- end }}
 spec:
   type: {{ .Values.mqttServices.type }}
-  {{- if or (eq .Values.mqttServices.type "LoadBalancer") (eq .Values.service.type "NodePort") }}
+  {{- if or (eq .Values.mqttServices.type "LoadBalancer") (eq .Values.mqttServices.type "NodePort") }}
   externalTrafficPolicy: {{ .Values.mqttServices.externalTrafficPolicy | default "Cluster" }}
   {{- end }}
   {{- if eq .Values.mqttServices.type "LoadBalancer" }}
@@ -39,7 +39,7 @@ spec:
     port: {{ .Values.mqttServices.mqtt | default 1883 }}
     protocol: TCP
     targetPort: mqtt
-    {{- if and (or (eq .Values.mqttServices.type "NodePort") (eq .Values.service.type "LoadBalancer")) (not (empty .Values.service.nodePorts.mqtt)) }}
+    {{- if and (or (eq .Values.mqttServices.type "NodePort") (eq .Values.mqttServices.type "LoadBalancer")) (not (empty .Values.mqttServices.nodePorts.mqtt)) }}
     nodePort: {{ .Values.mqttServices.nodePorts.mqtt }}
     {{- else if eq .Values.mqttServices.type "ClusterIP" }}
     nodePort: null
@@ -48,7 +48,7 @@ spec:
     port: {{ .Values.mqttServices.mqttssl | default 8883 }}
     protocol: TCP
     targetPort: mqttssl
-    {{- if and (or (eq .Values.mqttServices.type "NodePort") (eq .Values.service.type "LoadBalancer")) (not (empty .Values.service.nodePorts.mqttssl)) }}
+    {{- if and (or (eq .Values.mqttServices.type "NodePort") (eq .Values.mqttServices.type "LoadBalancer")) (not (empty .Values.mqttServices.nodePorts.mqttssl)) }}
     nodePort: {{ .Values.mqttServices.nodePorts.mqttssl }}
     {{- else if eq .Values.mqttServices.type "ClusterIP" }}
     nodePort: null
@@ -57,7 +57,7 @@ spec:
     port: {{ .Values.mqttServices.ws | default 8083 }}
     protocol: TCP
     targetPort: ws
-    {{- if and (or (eq .Values.mqttServices.type "NodePort") (eq .Values.service.type "LoadBalancer")) (not (empty .Values.service.nodePorts.ws)) }}
+    {{- if and (or (eq .Values.mqttServices.type "NodePort") (eq .Values.mqttServices.type "LoadBalancer")) (not (empty .Values.mqttServices.nodePorts.ws)) }}
     nodePort: {{ .Values.mqttServices.nodePorts.ws }}
     {{- else if eq .Values.mqttServices.type "ClusterIP" }}
     nodePort: null
@@ -66,7 +66,7 @@ spec:
     port: {{ .Values.mqttServices.wss | default 8084 }}
     protocol: TCP
     targetPort: wss
-    {{- if and (or (eq .Values.mqttServices.type "NodePort") (eq .Values.service.type "LoadBalancer")) (not (empty .Values.service.nodePorts.wss)) }}
+    {{- if and (or (eq .Values.mqttServices.type "NodePort") (eq .Values.mqttServices.type "LoadBalancer")) (not (empty .Values.mqttServices.nodePorts.wss)) }}
     nodePort: {{ .Values.mqttServices.nodePorts.wss }}
     {{- else if eq .Values.mqttServices.type "ClusterIP" }}
     nodePort: null
