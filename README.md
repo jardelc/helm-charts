@@ -19,7 +19,8 @@ helm repo update
 
 | Chart Name | Description                | Latest Version |
 |------------|----------------------------|----------------|
-| node-red   | A Helm chart for Node-Red  | 0.33.0        |
+| node-red   | A Helm chart for Node-Red  | 0.33.0         |
+| emqx       | A Helm chart for EMQX      | 1.1.2          |
 
 To install a chart:
 ```bash
