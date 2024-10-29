@@ -10,7 +10,7 @@ entries:
     name: emqx
     type: application
     urls:
-    - shttps://jardelc.github.io/helm-charts/charts/emqx-1.1.2.tgz
+    - https://jardelc.github.io/helm-charts/charts/emqx-1.1.2.tgz
     version: 1.1.2
   - apiVersion: v2
     appVersion: 1.1.0
@@ -21,7 +21,7 @@ entries:
     name: emqx
     type: application
     urls:
-    - shttps://jardelc.github.io/helm-charts/charts/emqx-1.1.1.tgz
+    - https://jardelc.github.io/helm-charts/charts/emqx-1.1.1.tgz
     version: 1.1.1
   - apiVersion: v2
     appVersion: 1.1.0
@@ -32,7 +32,7 @@ entries:
     name: emqx
     type: application
     urls:
-    - shttps://jardelc.github.io/helm-charts/charts/emqx-1.1.0.tgz
+    - https://jardelc.github.io/helm-charts/charts/emqx-1.1.0.tgz
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.0.0
@@ -43,7 +43,7 @@ entries:
     name: emqx
     type: application
     urls:
-    - shttps://jardelc.github.io/helm-charts/charts/emqx-1.0.0.tgz
+    - https://jardelc.github.io/helm-charts/charts/emqx-1.0.0.tgz
     version: 1.0.0
   node-red:
   - apiVersion: v2
@@ -53,6 +53,6 @@ entries:
     name: node-red
     type: application
     urls:
-    - shttps://jardelc.github.io/helm-charts/charts/node-red-0.33.0.tgz
+    - https://jardelc.github.io/helm-charts/charts/node-red-0.33.0.tgz
     version: 0.33.0
 generated: "2024-10-29T15:13:56.8628107-04:00"
