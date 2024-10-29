@@ -18,22 +18,3 @@ To install a chart:
 ```bash
 helm install <release-name> my-charts/<chart-name>
 ```
-
-## 🛠 Manual Packaging and Index Update
-
-To manually package new or updated charts and add them to the `index.yaml` file, follow these steps:
-
-1. **Package the Chart:**
-   Run the following command to create a `.tgz` package of the chart:
-   ```bash
-   helm package chart-src/<your-app> --destination charts/
-   ```
-
-2. **Update the `index.yaml` File:**
-   After packaging, update the `index.yaml` file to include the new or updated chart by running:
-   ```bash
-   helm repo index charts/ --url https://git.vwoa.na.vwg/chattanoogaitprodsys/kubecluster/helm-charts/charts
-   ```
-
-   This command will regenerate the `index.yaml` file, listing all available charts and their versions.
-
