@@ -7,14 +7,6 @@ Welcome to the **Helm Charts Repository**! This repository hosts a collection of
 
 To use these Helm charts in your Kubernetes environment, first ensure that you have [Helm](https://helm.sh/docs/intro/install/) installed.
 
-## 📥 Adding this Helm Repository
-
-Add this repository to Helm by running:
-```bash
-helm repo add my-charts  https://git.vwoa.na.vwg/chattanoogaitprodsys/kubecluster/helm-charts/charts
-helm repo update
-```
-
 ## 📦 Available Charts
 
 | Chart Name | Description                | Latest Version |
