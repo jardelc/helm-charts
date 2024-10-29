@@ -1,0 +1,58 @@
+apiVersion: v1
+entries:
+  emqx:
+  - apiVersion: v2
+    appVersion: 5.8.0
+    created: "2024-10-29T13:54:37.1619984-04:00"
+    description: A Helm chart for EMQX
+    digest: 52a25697437200e6ea90c8f45f522eaa7fa5969f6a330e7e1dc0ce5c1a35d4ed
+    icon: https://github.com/emqx.png
+    name: emqx
+    type: application
+    urls:
+    - https://git.vwoa.na.vwg/chattanoogaitprodsys/kubecluster/helm-charts/charts/emqx-1.1.2.tgz
+    version: 1.1.2
+  - apiVersion: v2
+    appVersion: 1.1.0
+    created: "2024-10-29T13:54:37.1603981-04:00"
+    description: A Helm chart for EMQX
+    digest: 1762ed4340a12ba195659c738ff41c7424d875a0c88419f3d8d57044fad5f783
+    icon: https://github.com/emqx.png
+    name: emqx
+    type: application
+    urls:
+    - https://git.vwoa.na.vwg/chattanoogaitprodsys/kubecluster/helm-charts/charts/emqx-1.1.1.tgz
+    version: 1.1.1
+  - apiVersion: v2
+    appVersion: 1.1.0
+    created: "2024-10-29T13:54:37.1593652-04:00"
+    description: A Helm chart for EMQX
+    digest: c87b46db560a070d2e410c41458346775f40a5c564436dbd7a8d72d53e5783fd
+    icon: https://github.com/emqx.png
+    name: emqx
+    type: application
+    urls:
+    - https://git.vwoa.na.vwg/chattanoogaitprodsys/kubecluster/helm-charts/charts/emqx-1.1.0.tgz
+    version: 1.1.0
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-10-29T13:54:37.1577278-04:00"
+    description: A Helm chart for EMQX
+    digest: 90f7870edea000aff8c2940560191a4a33a3122bc89dc932d7981f04eb4650d2
+    icon: https://github.com/emqx.png
+    name: emqx
+    type: application
+    urls:
+    - https://git.vwoa.na.vwg/chattanoogaitprodsys/kubecluster/helm-charts/charts/emqx-1.0.0.tgz
+    version: 1.0.0
+  node-red:
+  - apiVersion: v2
+    created: "2024-10-29T13:54:37.1688895-04:00"
+    description: A Helm chart for Node-Red
+    digest: d8a3131f2107f7312c20a9f67d0b5ed98041a282f6545de6f32b175ce592b57c
+    name: node-red
+    type: application
+    urls:
+    - https://git.vwoa.na.vwg/chattanoogaitprodsys/kubecluster/helm-charts/charts/node-red-0.33.0.tgz
+    version: 0.33.0
+generated: "2024-10-29T13:54:37.1551485-04:00"
