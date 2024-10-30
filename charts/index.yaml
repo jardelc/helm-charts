@@ -55,4 +55,14 @@ entries:
     urls:
     - https://jardelc.github.io/helm-charts/charts/node-red-0.33.0.tgz
     version: 0.33.0
+  nfs-provisioner:
+  - apiVersion: v2
+    created: "2024-10-29T15:13:56.8692093-04:00"
+    description: A Helm chart for nfs-provisioner
+    digest: d8a3131f2107f7312c20a9f67d0b5ed98041a282f6545de6f32b175ce592b57c
+    name: nfs-provisioner
+    type: application
+    urls:
+    - https://jardelc.github.io/helm-charts/charts/nfs-subdir-external-provisioner-4.0.18.tgz
+    version: 4.0.18
 generated: "2024-10-29T15:13:56.8628107-04:00"
