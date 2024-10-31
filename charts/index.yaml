@@ -3,7 +3,18 @@ entries:
   emqx:
   - apiVersion: v2
     appVersion: 5.8.0
-    created: "2024-10-31T11:11:53.164573087-04:00"
+    created: "2024-10-31T16:47:20.827397013-04:00"
+    description: A Helm chart for EMQX
+    digest: 8e6701a47f97f4568e50383287f4d17389d6f5ceab7ac7e920ca7dd6d4a646a4
+    icon: https://github.com/emqx.png
+    name: emqx
+    type: application
+    urls:
+    - https://jardelc.github.io/helm-charts/charts/emqx-1.1.3.tgz
+    version: 1.1.3
+  - apiVersion: v2
+    appVersion: 5.8.0
+    created: "2024-10-31T16:47:20.826695231-04:00"
     description: A Helm chart for EMQX
     digest: 52a25697437200e6ea90c8f45f522eaa7fa5969f6a330e7e1dc0ce5c1a35d4ed
     icon: https://github.com/emqx.png
@@ -14,7 +25,7 @@ entries:
     version: 1.1.2
   - apiVersion: v2
     appVersion: 1.1.0
-    created: "2024-10-31T11:11:53.163906815-04:00"
+    created: "2024-10-31T16:47:20.826072777-04:00"
     description: A Helm chart for EMQX
     digest: 1762ed4340a12ba195659c738ff41c7424d875a0c88419f3d8d57044fad5f783
     icon: https://github.com/emqx.png
@@ -25,7 +36,7 @@ entries:
     version: 1.1.1
   - apiVersion: v2
     appVersion: 1.1.0
-    created: "2024-10-31T11:11:53.163279895-04:00"
+    created: "2024-10-31T16:47:20.825341324-04:00"
     description: A Helm chart for EMQX
     digest: c87b46db560a070d2e410c41458346775f40a5c564436dbd7a8d72d53e5783fd
     icon: https://github.com/emqx.png
@@ -36,7 +47,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-10-31T11:11:53.162583853-04:00"
+    created: "2024-10-31T16:47:20.824555134-04:00"
     description: A Helm chart for EMQX
     digest: 90f7870edea000aff8c2940560191a4a33a3122bc89dc932d7981f04eb4650d2
     icon: https://github.com/emqx.png
@@ -48,7 +59,7 @@ entries:
   grafana:
   - apiVersion: v2
     appVersion: 11.3.0
-    created: "2024-10-31T11:11:53.166942785-04:00"
+    created: "2024-10-31T16:47:20.830781071-04:00"
     description: The leading tool for querying and visualizing time series and metrics.
     digest: 0e72fb0b9047128fd3a1c988764eb6caed909d81974ba4ecb5b3695847f2092e
     home: https://grafana.com
@@ -65,7 +76,7 @@ entries:
   nfs-subdir-external-provisioner:
   - apiVersion: v1
     appVersion: 4.0.2
-    created: "2024-10-31T11:11:53.16735645-04:00"
+    created: "2024-10-31T16:47:20.831336241-04:00"
     description: nfs-subdir-external-provisioner is an automatic provisioner that
       used your *already configured* NFS server, automatically creating Persistent
       Volumes.
@@ -84,7 +95,7 @@ entries:
     version: 4.0.18
   node-red:
   - apiVersion: v2
-    created: "2024-10-31T11:11:53.168542838-04:00"
+    created: "2024-10-31T16:47:20.832755472-04:00"
     description: A Helm chart for Node-Red
     digest: d8a3131f2107f7312c20a9f67d0b5ed98041a282f6545de6f32b175ce592b57c
     name: node-red
@@ -92,4 +103,4 @@ entries:
     urls:
     - https://jardelc.github.io/helm-charts/charts/node-red-0.33.0.tgz
     version: 0.33.0
-generated: "2024-10-31T11:11:53.161707003-04:00"
+generated: "2024-10-31T16:47:20.823410745-04:00"

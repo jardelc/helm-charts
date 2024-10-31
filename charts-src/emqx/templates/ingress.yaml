@@ -36,10 +36,10 @@ spec:
           service:
             name: {{ include "emqx.fullname" $ }}
             port:
-              number: {{ $.Values.service.dashboard }}
+              number: {{ $.Values.dashboardService.dashboard }}
           {{- else }}
           serviceName: {{ include "emqx.fullname" $ }}
-          servicePort: {{ $.Values.service.dashboard }}
+          servicePort: {{ $.Values.dashboardService.dashboard }}
           {{- end }}
   {{- end -}}
   {{- if .Values.ingress.dashboard.tls }}
